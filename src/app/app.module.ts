@@ -6,6 +6,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ClientedetalleComponent } from './clientedetalle/clientedetalle.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { ClientedetalleComponent } from './clientedetalle/clientedetalle.compone
     PortfolioComponent,
     ServiciosComponent,
     ContactoComponent,
-    ClientedetalleComponent
+    ClientedetalleComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
