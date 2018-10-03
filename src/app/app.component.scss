@@ -1,0 +1,14 @@
+@import "./../variables";
+header {
+  background: $white;
+  padding-top: 0.8rem;
+}
+.nav-item {
+  display: inline-block;
+  margin-right: 2rem;
+  padding: 2rem 0;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+

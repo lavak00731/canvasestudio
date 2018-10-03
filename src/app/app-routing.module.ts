@@ -9,6 +9,7 @@ import { ClientedetalleComponent  } from './clientedetalle/clientedetalle.compon
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServiciosComponent },
   { path: 'portfolio', component: PortfolioComponent },
