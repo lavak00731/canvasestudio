@@ -6,8 +6,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ClientedetalleComponent } from './clientedetalle/clientedetalle.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { Comp404Component } from './comp404/comp404.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     ServiciosComponent,
     ContactoComponent,
     ClientedetalleComponent,
-    HomeComponent
+    HomeComponent,
+    Comp404Component
   ],
   imports: [
     BrowserModule,

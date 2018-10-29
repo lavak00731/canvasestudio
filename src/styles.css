@@ -8509,3 +8509,7 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   font-size: 1.6rem;
 }
+
+.object-fit-cover {
+  object-fit: cover;
+}

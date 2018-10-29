@@ -1,0 +1,13 @@
+.home {
+  position: relative;
+}
+
+.home .home-text-wrapper {
+  position: absolute;
+  left: 8.33333333%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+}
