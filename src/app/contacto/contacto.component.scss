@@ -1,0 +1,55 @@
+@import "../../_variables.scss";
+@import "../../rfs.scss";
+.contact {
+    padding: 22% 0;
+    .btn {
+        background: $red;
+        border: 1px solid $red;
+        display: block;
+        margin-bottom: 5%;
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
+        @include responsive-font-size(1.8rem);
+        @media screen and (min-width: 768px) {
+            @include responsive-font-size(2.4rem);
+        }
+    }
+    h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+        @include responsive-font-size(4rem);
+        @media screen and (min-width: 768px) {
+            @include responsive-font-size(5rem);
+        }
+    }
+    h2 {
+        color: $red;
+        text-transform: uppercase;
+        margin-bottom: 5%;
+        @include responsive-font-size(3rem);
+        @media screen and (min-width: 768px) {
+            @include responsive-font-size(4rem);
+        }
+    }
+    p {
+        @include responsive-font-size(1.8rem);
+        @media screen and (min-width: 768px) {
+            @include responsive-font-size(2.4rem);
+        }
+        &.text-center {
+          &:after {
+            content:"";
+            display: block;
+            width: 80%;
+            height: 2rem;
+            background: url(./../../assets/decorator.svg) no-repeat center center;
+            background-size: cover;
+            margin: 0 auto 5%;
+          }
+        }
+    }
+    .contact-inner {
+      background: $white;
+      padding: 3rem;
+    }
+}

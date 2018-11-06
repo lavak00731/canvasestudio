@@ -9,6 +9,7 @@ import { ClientedetalleComponent } from './clientedetalle/clientedetalle.compone
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { Comp404Component } from './comp404/comp404.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Comp404Component } from './comp404/comp404.component';
     ContactoComponent,
     ClientedetalleComponent,
     HomeComponent,
-    Comp404Component
+    Comp404Component,
+    FormComponent
   ],
   imports: [
     BrowserModule,
