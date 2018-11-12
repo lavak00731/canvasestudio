@@ -2,6 +2,9 @@
 @import "../../rfs.scss";
 .contact {
     padding: 22% 0;
+    @media screen and (min-width: 320px) and (orientation: landscape) {
+      padding: 5% 0;
+    }
     .btn {
         background: $red;
         border: 1px solid $red;
@@ -26,9 +29,9 @@
         color: $red;
         text-transform: uppercase;
         margin-bottom: 5%;
-        @include responsive-font-size(3rem);
+        @include responsive-font-size(2rem);
         @media screen and (min-width: 768px) {
-            @include responsive-font-size(4rem);
+            @include responsive-font-size(3rem);
         }
     }
     p {
@@ -40,8 +43,8 @@
           &:after {
             content:"";
             display: block;
-            width: 80%;
-            height: 2rem;
+            width: 32rem;
+            height: 4rem;
             background: url(./../../assets/decorator.svg) no-repeat center center;
             background-size: cover;
             margin: 0 auto 5%;
@@ -50,6 +53,6 @@
     }
     .contact-inner {
       background: $white;
-      padding: 3rem;
+      padding: 3rem 2rem;
     }
 }
