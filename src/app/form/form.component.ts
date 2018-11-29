@@ -8,11 +8,16 @@ import { FormDataType } from './../form-data-type';
 })
 
 export class FormComponent implements OnInit {
+  name;
+  email;
+  msg;
+  subject;
+
   dataModel = new FormDataType(this.name, this.email, this.msg, this.subject);
   constructor() { }
 
   ngOnInit() {
-    console.log(this.dataModel);
+
   }
 
 }
