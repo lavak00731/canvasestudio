@@ -4,22 +4,22 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" [(ngModel)]="dataModel.name" required  #name="ngModel" >
-      <p id="name-error" *ngIf="name.invalid && (name.dirty || name.touched)">Name is a required field</p>
+      <p id="name-error" class="error-descriptor" *ngIf="name.invalid && (name.dirty || name.touched)">Name is a required field</p>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" [email]="true" class="form-control" placeholder="youremail@email.com"  [(ngModel)]="dataModel.email" required #emailAd="ngModel">
-      <p id="email-required" *ngIf="emailAd.touched && emailAd.value === ''">Email is a required field</p>
-      <p id="email-valid" *ngIf="emailAd.invalid && emailAd.dirty">This Field needs to be a Valid Email</p>
+      <p id="email-required" class="error-descriptor" *ngIf="emailAd.touched && emailAd.errors.required">Email is a required field</p>
+      <p id="email-valid" class="error-descriptor" *ngIf="emailAd.invalid && emailAd.dirty">This Field needs to be a Valid Email</p>
     </div>
     <div class="form-group">
       <label for="subject">Subject</label>
-      <input type="text" name="subject" id="subject" class="form-control" placeholder=""  [(ngModel)]="dataModel.subject">
+      <input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject"  [(ngModel)]="dataModel.subject">
     </div>
     <div class="form-group">
       <label for="msg">Message</label>
-      <textarea class="form-control" name="msg" id="msg" rows="3" required  [(ngModel)]="dataModel.msg" #msg="ngModel"></textarea>
-      <p id="msg-error" *ngIf="msg.invalid && (msg.dirty || msg.touched)">Message field cannot be empty</p>
+      <textarea class="form-control" name="msg" id="msg" rows="3" required  [(ngModel)]="dataModel.msg" #msg="ngModel" required></textarea>
+      <p id="msg-error" class="error-descriptor" *ngIf="msg.invalid && (msg.dirty || msg.touched)">Message field cannot be empty</p>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>

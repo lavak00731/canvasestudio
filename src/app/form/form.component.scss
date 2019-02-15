@@ -24,9 +24,15 @@ form {
   }
   input, textarea {
     padding: 11% 6%;
+    margin-bottom: 3%;
     @media screen and (min-width: 768px) {
       & {
-        padding: 9% 5%;
+        padding: 7% 5%;
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      & {
+        padding: 5% 3%;
       }
     }
   }
@@ -42,7 +48,7 @@ form {
       padding: 1.8rem;
     }
   }
-  textarea {
-    margin-bottom: 3%;
+  .error-descriptor {
+    color: $red;
   }
 }
