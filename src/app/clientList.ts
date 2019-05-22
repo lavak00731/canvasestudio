@@ -5,7 +5,7 @@ export const CLIENTS: ClientType[] = [
     "url": "https://esteticafemeninagabrielagatto.com",
     "picture": "./portfolio/esteticagabriela.jpg",
     "description": "Responsive Site created on Wordpress, its main feature is that user can book or cancel any service from the website. It includes blog in order to show the latest news, a newsletter in order to offer some products and inform about events. The website is a PWA (progressive web application) which can work offline and it is another way to book a service without any effort from the user perspective.",
-    "tag": "RWD, PWA, Content Strategy, Wordpress"
+    "tag": "RWD, PWA, Content Strategy, Wordpress, Print"
   },
   {
     "name": "Rosario Ventiladores",
@@ -26,28 +26,28 @@ export const CLIENTS: ClientType[] = [
     "url": "http://carlospazcentroalquiler.com",
     "picture": "./portfolio/carlospazcentroalquiler.jpg",
     "description": "Website which aims to offer renting departments temporaly in Carlos Paz city.",
-    "tag": "RWD, Static Html" 
+    "tag": "RWD, static-html, Print" 
   },
   {
     "name": "Cerrajería Pampa",
     "url": "http://cerrajeriapampa.com",
     "picture": "./portfolio/cerrajeriapampa.jpg",
     "description": "Single page website, focused on quick engaging by the user. Contact using Whatsapp, CSS for Print, seal is put to be used by a cell phone user who needs a locksmith service immediately.",
-    "tag": "RWD, Static Html, SPA"
+    "tag": "RWD, static-html, SPA"
   },
   {
     "name": "Industrias Titanio",
     "url": "http://industriastitanio.com",
     "picture": "./portfolio/industriastitanio.jpg",
-    "description": "Online portfolio of a wide range a products from a factory.",
-    "tag": "RWD, Online Portfolio"
+    "description": "online-portfolio of a wide range a products from a factory.",
+    "tag": "RWD, online-portfolio, static-html"
   },
   {
     "name": "Vivero La Cumbrecita",
     "url": "http://viverolacumbrecita.com",
     "picture": "./portfolio/viverolacumbrecita.jpg",
     "description": "Online catalog of products and plants for a big plant nursery",
-    "tag": "RWD, Online Portfolio"
+    "tag": "Wordpress, online-portfolio"
 
   }
 ]
