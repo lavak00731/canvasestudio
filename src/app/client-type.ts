@@ -3,5 +3,6 @@ export interface ClientType {
   url: string;
   picture: string;
   description: string;
-  tag: string;
+  tags: object;
+  print: object;
 }

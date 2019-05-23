@@ -4,35 +4,51 @@
     <p class="text-center">Here is a sample of work done and the technology involved</p>
       <form action="">
         <fieldset class="row">
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="RWD" name="RWD" value="RWD">
-            <label for="RWD" class="text-center">Responsive Web Design</label>
+            <label for="RWD">Responsive Web Design</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="e-commerce" name="e-commerce" value="e-commerce">
-            <label for="e-commerce" class="text-center">e-Commerce</label>
+            <label for="e-commerce">e-Commerce</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="wordpress" name="wordpress" value="wordpress">
-            <label for="wordpress" class="text-center">Wordpress</label>
+            <label for="wordpress">Wordpress</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="static-html" name="static-html" value="static-html">
-            <label for="static-html" class="text-center">Static Html</label>
+            <label for="static-html">Static Html</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="spa" name="spa" value="spa">
-            <label for="spa" class="text-center">Single Page App</label>
+            <label for="spa">Single Page App</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
+            <input type="checkbox" class="visually-hidden" id="content-strategy" name="content-strategy" value="content-strategy">
+            <label for="content-strategy">Content Strategy</label>
+          </div>
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="online-portfolio" name="online-portfolio" value="online-portfolio">
-            <label for="online-portfolio" class="text-center">Online Portfolio</label>
+            <label for="online-portfolio">Online Portfolio</label>
           </div>
-          <div class="col">
+          <div class="col-6 col-md-3 text-center">
             <input type="checkbox" class="visually-hidden" id="print" name="print" value="print">
-            <label for="print" class="text-center">Print</label>
+            <label for="print">Print</label>
           </div>
         </fieldset>
       </form>
   </div>
+  <div class="card-deck">
+  <div class="card" *ngFor="let client of clients">
+    <img src="{{client.picture}}" class="card-img-top" alt="{{client.name}}">
+    <div class="card-body">
+      <h2 class="card-title">{{client.name}}</h2>
+      <p class="card-text">{{client.description}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted" *ngFor="let tag of client.tags">{{tag.name}}</small>      
+    </div>
+  </div>  
+</div>
 </div>
