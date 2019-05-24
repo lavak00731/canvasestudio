@@ -24,8 +24,25 @@
             height: 4rem;
             background: url(./../../assets/decorator.svg) no-repeat center center;
             background-size: cover;
-            margin: 0 auto 5%;
+            margin: 0 auto 2%;
           }
         }
     }
+    form {
+        padding: 0 0 4rem;
+        @include responsive-font-size(1.8rem);
+        @media screen and (min-width: 768px) {
+            @include responsive-font-size(2.4rem);
+        }
+    }
+    .card-columns{      
+      
+        h2 {
+            @include responsive-font-size(2rem);
+            @media screen and (min-width: 768px) {
+                @include responsive-font-size(2.5rem);
+            }
+        }
+    }
+    
 }

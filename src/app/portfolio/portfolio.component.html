@@ -38,17 +38,20 @@
           </div>
         </fieldset>
       </form>
-  </div>
-  <div class="card-deck">
-  <div class="card" *ngFor="let client of clients">
-    <img src="{{client.picture}}" class="card-img-top" alt="{{client.name}}">
-    <div class="card-body">
-      <h2 class="card-title">{{client.name}}</h2>
-      <p class="card-text">{{client.description}}</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted" *ngFor="let tag of client.tags">{{tag.name}}</small>      
-    </div>
+      <div class="card-columns">
+        <div class="card" *ngFor="let client of clients">
+          <a href="">
+            <img src="{{client.picture}}" class="card-img-top img-fluid" alt="{{client.name}}">
+            <div class="card-body">
+              <h2 class="card-title">{{client.name}}</h2> 
+              <p class="card-text">
+                <small class="text-muted">
+                    <span class="btn" *ngFor="let tag of client.tags">{{tag.name}}</span> 
+                </small>
+             </p>     
+            </div>
+          </a>          
+        </div>  
+      </div>
   </div>  
-</div>
 </div>

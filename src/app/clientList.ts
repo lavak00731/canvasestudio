@@ -5,7 +5,7 @@ export const CLIENTS: ClientType[] = [
     "url": "https://esteticafemeninagabrielagatto.com",
     "picture": "../assets/portfolio/esteticagabriela.jpg",
     "description": "Responsive Site created on Wordpress, its main feature is that user can book or cancel any service from the website. It includes blog in order to show the latest news, a newsletter in order to offer some products and inform about events. The website is a PWA (progressive web application) which can work offline and it is another way to book a service without any effort from the user perspective.",
-    "tags": [{"name":"RWD"}, {"name":"PWA"}, {"name":"content-strategy"}, {"name":"Wordpress"}, {"name":"Print"}],
+    "tags": [{"name":"RWD"}, {"name":"PWA"}, {"name":"Content Strategy"}, {"name":"Wordpress"}, {"name":"Print"}],
     "print": {
         "isPrinted": true,
         "printWork": [
@@ -47,7 +47,7 @@ export const CLIENTS: ClientType[] = [
     "url": "http://carlospazcentroalquiler.com",
     "picture": "../assets/portfolio/carlospazcentroalquiler.jpg",
     "description": "Website which aims to offer renting departments temporaly in Carlos Paz city.",
-    "tags": [{"name":"RWD"}, {"name":"static-html"}, {"name":"Print"}],
+    "tags": [{"name":"RWD"}, {"name":"Static Html"}, {"name":"Print"}],
     "print": {
       "isPrinted": true,
       "printWork": [
@@ -67,7 +67,7 @@ export const CLIENTS: ClientType[] = [
     "url": "http://cerrajeriapampa.com",
     "picture": "../assets/portfolio/cerrajeriapampa.jpg",
     "description": "Single page website, focused on quick engaging by the user. Contact using Whatsapp, CSS for Print, seal is put to be used by a cell phone user who needs a locksmith service immediately.",
-    "tags": [{"name":"RWD"}, {"name":"static-html"}, {"name":"SPA"}],
+    "tags": [{"name":"RWD"}, {"name":"Static Html"}, {"name":"SPA"}],
     "print": {
       "isPrinted": false,
       "printWork": []
@@ -77,8 +77,8 @@ export const CLIENTS: ClientType[] = [
     "name": "Industrias Titanio",
     "url": "http://industriastitanio.com",
     "picture": "../assets/portfolio/industriastitanio.jpg",
-    "description": "online-portfolio of a wide range a products from a factory.",
-    "tags": [{"name":"RWD"}, {"name":"online-portfolio"}, {"name":"static-html"}],
+    "description": "Online Portfolio of a wide range a products from a fan factory.",
+    "tags": [{"name":"RWD"}, {"name":"Online Portfolio"}, {"name":"Static Html"}],
     "print": {
       "isPrinted": false,
       "printWork": []
@@ -89,7 +89,7 @@ export const CLIENTS: ClientType[] = [
     "url": "http://viverolacumbrecita.com",
     "picture": "../assets/portfolio/viverolacumbrecita.jpg",
     "description": "Online catalog of products and plants for a big plant nursery",
-    "tags": [{"name":"Wordpress"}, {"name":"online-portfolio"}],
+    "tags": [{"name":"Wordpress"}, {"name":"Online Portfolio"}],
     "print": {
       "isPrinted": false,
       "printWork": []
