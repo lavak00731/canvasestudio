@@ -1,6 +1,7 @@
 import { ClientType } from './client-type';
 export const CLIENTS: ClientType[] = [
   {
+    "id": "esteticagabriela",
     "name": "Estética Femenina Gabriela Gatto",
     "url": "https://esteticafemeninagabrielagatto.com",
     "picture": "../assets/portfolio/esteticagabriela.jpg",
@@ -21,6 +22,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "rosarioventiladores",
     "name": "Rosario Ventiladores",
     "url": "http://rosarioventiladores.com",
     "picture": "../assets/portfolio/rosarioventiladores.jpg",
@@ -32,6 +34,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "jorgealopez",
     "name": "Jorge A López",
     "url": "http://jorgealopez.com",
     "picture": "../assets/portfolio/jorgealopez.jpg",
@@ -43,6 +46,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "carlospazcentro",
     "name": "Carlos Paz Centro Alquiler",
     "url": "http://carlospazcentroalquiler.com",
     "picture": "../assets/portfolio/carlospazcentroalquiler.jpg",
@@ -63,6 +67,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "cerrajeriapampa",
     "name": "Cerrajería Pampa",
     "url": "http://cerrajeriapampa.com",
     "picture": "../assets/portfolio/cerrajeriapampa.jpg",
@@ -74,6 +79,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "industriastitanio",
     "name": "Industrias Titanio",
     "url": "http://industriastitanio.com",
     "picture": "../assets/portfolio/industriastitanio.jpg",
@@ -85,6 +91,7 @@ export const CLIENTS: ClientType[] = [
     }
   },
   {
+    "id": "viverolacumbrecita",
     "name": "Vivero La Cumbrecita",
     "url": "http://viverolacumbrecita.com",
     "picture": "../assets/portfolio/viverolacumbrecita.jpg",

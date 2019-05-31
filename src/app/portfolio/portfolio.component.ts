@@ -13,8 +13,7 @@ export class PortfolioComponent implements OnInit {
   constructor(private _clientService: ClientsService) { }
 
   ngOnInit() {
-    this.clients = this._clientService.getClients();
-    console.log(this.clients);
+    this.clients = this._clientService.getClients();   
   }
 
 }

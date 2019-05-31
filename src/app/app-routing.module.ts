@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'services', component: ServiciosComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'contact', component: ContactoComponent },
-  { path: 'client/:id', component: ClientedetalleComponent  },
+  { path: 'portfolio/:id', component: ClientedetalleComponent  },
   { path: '**',  component: Comp404Component }
 
 ];
