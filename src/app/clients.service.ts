@@ -7,7 +7,19 @@ import { CLIENTS } from './clientList';
 export class ClientsService {
   
   constructor() {}
+
   getClients() {
     return CLIENTS;
+  }
+  returnClient(id:string) {
+    let returnedClient: any;
+      CLIENTS.forEach(function(elem){
+        if(id == elem.id) {
+          console.log(elem);
+          returnedClient = elem;
+        }
+      });
+      console.log(returnedClient);
+      return returnedClient;
   }
 }
