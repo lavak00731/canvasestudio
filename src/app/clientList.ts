@@ -3,7 +3,7 @@ export const CLIENTS: ClientType[] = [
   {
     "id": "esteticagabriela",
     "name": "Estética Femenina Gabriela Gatto",
-    "url": "https://esteticafemeninagabrielagatto.com",
+    "url": "https://esteticagabrielagatto.com",
     "picture": "../assets/portfolio/esteticagabriela.jpg",
     "description": "Responsive Site created on Wordpress, its main feature is that user can book or cancel any service from the website. It includes blog in order to show the latest news, a newsletter in order to offer some products and inform about events. The website is a PWA (progressive web application) which can work offline and it is another way to book a service without any effort from the user perspective.",
     "tags": [{"name":"RWD"}, {"name":"PWA"}, {"name":"Content Strategy"}, {"name":"Wordpress"}, {"name":"Print"}],
@@ -12,11 +12,11 @@ export const CLIENTS: ClientType[] = [
         "printWork": [
             {
               "artwork": "../assets/portfolio/print/esteticagabrielagatto/tarjetapersonalesteticagabriela1.jpg",
-              "alt": 'Estética Gabriela Gatto Frente'
+              "alt": 'Estética Gabriela Gatto´s business card front view'
             },
             {
               "artwork": "../assets/portfolio/print/esteticagabrielagatto/tarjetapersonalesteticagabriela2.jpg",
-              "alt": 'Tarjeta Estética Gabriela Gatto Dorso'
+              "alt": 'Estética Gabriela Gatto´s business card back view'
             }
         ]        
     }
