@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { Comp404Component } from './comp404/comp404.component';
 import { FormComponent } from './form/form.component';
+import { FilterClientPipe } from './filter-client.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormComponent } from './form/form.component';
     ClientedetalleComponent,
     HomeComponent,
     Comp404Component,
-    FormComponent
+    FormComponent,
+    FilterClientPipe
   ],
   imports: [
     BrowserModule,

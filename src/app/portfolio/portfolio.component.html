@@ -3,55 +3,55 @@
     <h1 class="text-center">Portfolio</h1>
     <p class="text-center">Here is a sample of work done and the technology involved</p>
       <form action="">
-        <fieldset class="row">
+        <fieldset class="row">            
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="RWD" name="RWD" value="RWD">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('RWD', $event)"  id="RWD" name="RWD" value="RWD">
             <label class="btn btn-primary" for="RWD">Responsive Web Design</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="e-commerce" name="e-commerce" value="e-commerce">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('e-commerce', $event)" id="e-commerce" name="e-commerce" value="e-commerce">
             <label class="btn btn-primary" for="e-commerce">e-Commerce</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="wordpress" name="wordpress" value="wordpress">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('wordpress', $event)" id="wordpress" name="wordpress" value="wordpress">
             <label class="btn btn-primary" for="wordpress">Wordpress</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="static-html" name="static-html" value="static-html">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('static html', $event)" id="static-html" name="static-html" value="static-html">
             <label class="btn btn-primary" for="static-html">Static Html</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="spa" name="spa" value="spa">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('spa', $event)" id="spa" name="spa" value="spa">
             <label class="btn btn-primary" for="spa">Single Page App</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="content-strategy" name="content-strategy" value="content-strategy">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('content strategy', $event)"  id="content-strategy" name="content-strategy" value="content-strategy">
             <label class="btn btn-primary" for="content-strategy">Content Strategy</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="online-portfolio" name="online-portfolio" value="online-portfolio">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('online portfolio', $event)" id="online-portfolio" name="online-portfolio" value="online-portfolio">
             <label class="btn btn-primary" for="online-portfolio">Online Portfolio</label>
           </div>
           <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" id="print" name="print" value="print">
+            <input type="checkbox" class="visually-hidden" (change)="checkValue('print', $event)" id="print" name="print" value="print">
             <label class="btn btn-primary" for="print">Print</label>
           </div>
         </fieldset>
       </form>
       <div class="card-columns">
-        <div class="card" *ngFor="let client of clients">
+        <div class="card" *ngFor="let client of clients | filterClient: featureList">
           <a [routerLink]="['/portfolio', client.id]">
             <img src="{{client.picture}}" class="card-img-top img-fluid" alt="{{client.name}}">
             <div class="card-body">
               <h2 class="card-title">{{client.name}}</h2> 
               <p class="card-text">
                 <small class="text-muted">
-                    <span class="btn" *ngFor="let tag of client.tags">{{tag.name}}</span> 
+                    <span class="badge badge-primary" *ngFor="let tag of client.tags">{{tag.name}}</span> 
                 </small>
              </p>     
             </div>
           </a>          
         </div>  
-      </div>
+      </div>      
   </div>  
 </div>
