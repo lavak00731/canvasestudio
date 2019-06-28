@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterClientPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if(args == "") {      
+    const options = args;
+    console.log(options);
+   /*  if(args == "") {      
       return value;
                             
      
@@ -19,7 +21,7 @@ export class FilterClientPipe implements PipeTransform {
                              });
                             
       
-    }   
+    }    */
   }
 
 }
