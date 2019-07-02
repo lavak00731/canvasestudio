@@ -8,63 +8,35 @@ import { ClientsService } from '../clients.service';
 })
 export class PortfolioComponent implements OnInit {
 
-  clients: any[];
-  featureList: any[] = [
-      {
-        'RWD': {
-          isSelected: false,
-          value: 'RWD'
-        }
-      },
-      {
-        'ecommerce': {
-          isSelected: false,
-          value: 'e-Commerce'
-        }
-      },
-      {
-        'wordpress': {
-          isSelected: false,
-          value: 'Wordpress'
-        }
-      },
-      {
-        'statichtml': {
-          isSelected: false,
-          value: 'Static Html'
-        }
-      },
-      {
-        'spa': {
-          isSelected: false,
-          value: 'SPA'
-        }
-      },
-      {
-        'contentstrategy': {
-          isSelected: false,
-          value: 'Content Strategy'
-        }
-      },
-      {
-        'onlineportfolio': {
-          isSelected: false,
-          value: 'Online Portfolio'
-        }
-      },
-      {
-        'print': {
-          isSelected: false,
-          value: 'Print'
-        }
-      }    
-  ];
-
+  clients: any[];  
+  services: any[] = [];
   constructor(private _clientService: ClientsService) { }
 
   ngOnInit() {
-    this.clients = this._clientService.getClients();
-    console.log(this.featureList[0].RWD.isSelected);
+    this.clients = this._clientService.getClients();    
+  }
+  /* filterTags(elem: Array<string>) {
+    
+    if(this.services.length == 0) {
+      return false;
+    } else {
+      return elem.filter(x => {
+        console.log(this.services.some(r=> elem.indexOf(r) >= 0));
+        this.services.some(r=> elem.includes(r));        
+      })
+    }
+  } */
+  checkTags(event: any) {  
+    if (event.target.checked)  {
+      this.services.push(event.target.value);
+    } else {
+      for( var i = 0; i < this.services.length; i++){ 
+        if ( this.services[i] === event.target.value) {
+          this.services.splice(i, 1); 
+          i--;
+        }
+      }
+    }     
   }
   
 }

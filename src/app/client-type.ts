@@ -5,5 +5,6 @@ export interface ClientType {
   picture: string;
   description: string;
   tags: object;
+  services: Array<string>;
   print: object;
 }

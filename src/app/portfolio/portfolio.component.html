@@ -3,43 +3,46 @@
     <h1 class="text-center">Portfolio</h1>
     <p class="text-center">Here is a sample of work done and the technology involved</p>
       <form action="">
-        <fieldset class="row">            
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[0].RWD.isSelected" id="RWD" name="RWD" value="RWD">
-            <label class="btn btn-primary" for="RWD">Responsive Web Design</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[1].ecommerce.isSelected" id="ecommerce" name="ecommerce" value="ecommerce">
-            <label class="btn btn-primary" for="ecommerce">e-Commerce</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[2].wordpress.isSelected" id="wordpress" name="wordpress" value="wordpress">
-            <label class="btn btn-primary" for="wordpress">Wordpress</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[3].statichtml.isSelected" id="statichtml" name="statichtml" value="statichtml">
-            <label class="btn btn-primary" for="statichtml">Static Html</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[4].spa.isSelected" id="spa" name="spa" value="spa">
-            <label class="btn btn-primary" for="spa">Single Page App</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden"[(ngModel)]="featureList[5].contentstrategy.isSelected"  id="contentstrategy" name="contentstrategy" value="contentstrategy">
-            <label class="btn btn-primary" for="contentstrategy">Content Strategy</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[6].onlineportfolio.isSelected" id="onlineportfolio" name="onlineportfolio" value="onlineportfolio">
-            <label class="btn btn-primary" for="onlineportfolio">Online Portfolio</label>
-          </div>
-          <div class="col-6 col-md-3 text-center">
-            <input type="checkbox" class="visually-hidden" [(ngModel)]="featureList[7].print.isSelected" id="print" name="print" value="print">
-            <label class="btn btn-primary" for="print">Print</label>
-          </div>
+        <fieldset>  
+          <div class="row">
+              <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="RWD" name="RWD" value="RWD">
+                  <label class="btn btn-primary" for="RWD">Responsive Web Design</label>            
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="ecommerce" name="ecommerce" value="e-Commerce">
+                  <label class="btn btn-primary" for="ecommerce">e-Commerce</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="wordpress" name="wordpress" value="Wordpress">
+                  <label class="btn btn-primary" for="wordpress">Wordpress</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="statichtml" name="statichtml" value="Static Html">
+                  <label class="btn btn-primary" for="statichtml">Static Html</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="spa" name="spa" value="SPA">
+                  <label class="btn btn-primary" for="spa">Single Page App</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)"  id="contentstrategy" name="contentstrategy" value="Content Strategy">
+                  <label class="btn btn-primary" for="contentstrategy">Content Strategy</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="onlineportfolio" name="onlineportfolio" value="Online Portfolio">
+                  <label class="btn btn-primary" for="onlineportfolio">Online Portfolio</label>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                  <input type="checkbox" class="visually-hidden" (change)="checkTags($event)" id="print" name="print" value="Print">
+                  <label class="btn btn-primary" for="print">Print</label>
+                </div>
+          </div>         
         </fieldset>
       </form>
+      <p>{{featurelist}}</p>
       <div class="card-columns">
-        <div class="card" *ngFor="let client of clients | filterClient: featureList">
+        <div class="card" *ngFor="let client of clients | filterClient: services">
           <a [routerLink]="['/portfolio', client.id]">
             <img src="{{client.picture}}" class="card-img-top img-fluid" alt="{{client.name}}">
             <div class="card-body">
