@@ -13,7 +13,6 @@ export class ClientedetalleComponent implements OnInit {
   constructor(private service: ClientsService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => {    
       
-      console.log(params.id); 
       this.client = service.returnClient(params.id);
      
     });

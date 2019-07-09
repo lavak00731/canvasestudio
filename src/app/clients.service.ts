@@ -15,11 +15,9 @@ export class ClientsService {
     let returnedClient: any;
       CLIENTS.forEach(function(elem){
         if(id == elem.id) {
-          console.log(elem);
           returnedClient = elem;
         }
       });
-      console.log(returnedClient);
       return returnedClient;
   }
 }

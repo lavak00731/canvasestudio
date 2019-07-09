@@ -15,17 +15,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.clients = this._clientService.getClients();    
   }
-  /* filterTags(elem: Array<string>) {
-    
-    if(this.services.length == 0) {
-      return false;
-    } else {
-      return elem.filter(x => {
-        console.log(this.services.some(r=> elem.indexOf(r) >= 0));
-        this.services.some(r=> elem.includes(r));        
-      })
-    }
-  } */
   checkTags(event: any) {  
     if (event.target.checked)  {
       this.services.push(event.target.value);
@@ -36,7 +25,13 @@ export class PortfolioComponent implements OnInit {
           i--;
         }
       }
+    }
+    if (window.innerWidth < 768) {
+      let target = <HTMLElement> document.querySelector('.card-columns').offsetTop;
+      document.querySelector('body, html').scrollTo({
+        top: target,
+        behavior: 'smooth'
+      })
     }     
-  }
-  
+  } 
 }
