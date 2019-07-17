@@ -27,7 +27,7 @@ export class PortfolioComponent implements OnInit {
       }
     }
     if (window.innerWidth < 768) {
-      let target = <HTMLElement> document.querySelector('.card-columns').offsetTop;
+      let target =  document.querySelector('.card-columns')[0].offsetTop;
       document.querySelector('body, html').scrollTo({
         top: target,
         behavior: 'smooth'
