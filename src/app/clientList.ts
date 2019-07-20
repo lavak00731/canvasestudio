@@ -95,18 +95,5 @@ export const CLIENTS: ClientType[] = [
       "isPrinted": false,
       "printWork": []
     }
-  },
-  {
-    "id": "viverolacumbrecita",
-    "name": "Vivero La Cumbrecita",
-    "url": "http://viverolacumbrecita.com",
-    "picture": "../assets/portfolio/viverolacumbrecita.jpg",
-    "description": "Online catalog of products and plants for a big plant nursery",
-    "tags": [{"name":"Wordpress"}, {"name":"Online Portfolio"}],
-    "services": ["Wordpress", "Online Portfolio"],
-    "print": {
-      "isPrinted": false,
-      "printWork": []
-    }
-  }
+  }  
 ]
