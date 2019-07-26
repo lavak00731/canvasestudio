@@ -16,6 +16,10 @@ export class ServiciosComponent implements OnInit {
 
   ngOnInit() {
     this.services = this._services.getService();
+    
+      
+  } 
+  subjectTrigger (title: string) {
+    console.log(title);
   }
-
 }
