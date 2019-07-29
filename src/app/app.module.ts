@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { Comp404Component } from './comp404/comp404.component';
 import { FormComponent } from './form/form.component';
 import { FilterClientPipe } from './filter-client.pipe';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FilterClientPipe } from './filter-client.pipe';
     HomeComponent,
     Comp404Component,
     FormComponent,
-    FilterClientPipe
+    FilterClientPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
