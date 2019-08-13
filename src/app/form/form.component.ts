@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges} from '@angular/core';
 import { FormDataType } from './../form-data-type';
 
 @Component({
@@ -12,12 +12,17 @@ export class FormComponent implements OnInit {
   email;
   msg;
   subject;
-
+  
+ @Input() subjectData: string;
+  
   dataModel = new FormDataType(this.name, this.email, this.msg, this.subject);
   constructor() { }
-
+  
   ngOnInit() {
-
+    
   }
-
+  ngOnChanges() {
+    this.dataModel.subject = this.subjectData;   
+  }
+  
 }

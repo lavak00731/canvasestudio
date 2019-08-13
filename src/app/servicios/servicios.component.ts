@@ -9,6 +9,8 @@ import { ServicesService } from '../services.service';
 export class ServiciosComponent implements OnInit {
 
   services: any[];
+  isTriggered = true;
+  dataSubject: string;
 
   constructor(private _services: ServicesService ) { 
 
@@ -17,7 +19,9 @@ export class ServiciosComponent implements OnInit {
   ngOnInit() {
     this.services = this._services.getService();   
   } 
-  subjectTrigger (title: string) {
-    console.log(title);
+  subjectTrigger (title: string) {   
+    this.isTriggered = false;
+    this.dataSubject = title;
+    
   }
 }

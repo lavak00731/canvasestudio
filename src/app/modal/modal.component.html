@@ -1,14 +1,14 @@
-<div role="dialog"
-     id="dialog"
-     aria-labelledby="dialog1_label"
-     aria-modal="true">
-  <div class="inner-modal">
-  <h3 id="dialog1_label" class="dialog_label">
-    Get in Touch with Us
-  </h3>
-  <button type="close" aria-label="close" class="close">
-    <span aria-hidden="true">&times;</span>
-  </button>  
-    <app-form></app-form>
-  </div>  
+<div class="backdrop" [hidden]="isClosed">
+  <div role="dialog" id="dialog" aria-labelledby="dialog1_label" aria-modal="true">
+    <div class="inner-modal">
+      <h3 id="dialog1_label" class="dialog_label">
+        Get in Touch with Us
+      </h3>
+      <button type="close" aria-labelledby="close" class="close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+        <span id="close" aria-hidden="true" class="visually-hidden">Close</span>
+      </button> 
+      <app-form [subjectData]="subj"></app-form>
+    </div>
+  </div>
 </div>

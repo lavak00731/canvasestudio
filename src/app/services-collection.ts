@@ -37,7 +37,7 @@ export const SERVICES: ServiceType[] = [
         "description": "Do you need that your application has all the features that your customer looks for but without reloading the page? You are in the right place with the right people."
     },
     {
-        "title": "Design for Printg",
+        "title": "Design for Print",
         "img": "../../assets/services/print.jpg",
         "altText": "Print Service",
         "description": "We are capable of creating brochures and presentation cards in order support your online strategy."

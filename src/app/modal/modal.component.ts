@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-
+  
   constructor() { }
-
-  ngOnInit() {
+ //modal closing
+@Input() subj: string;
+@Input() isClosed: boolean;
+  ngOnInit() {}
+  
+  closeModal() {
+    this.isClosed = true;
   }
-
 }

@@ -1,4 +1,13 @@
 @import "../../variables";
+.backdrop {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  background: rgba($color: #000000, $alpha: 0.5);
+}
 [role="alertdialog"],
 [role="dialog"] {
   box-sizing: border-box;
@@ -19,8 +28,7 @@
 
 @media screen and (min-width: 640px) {
   [role="alertdialog"],
-  [role="dialog"] {
-    position: absolute;
+  [role="dialog"] {    
     top: 2rem;
     left: 50vw;  /* move to the middle of the screen (assumes relative parent is the body/viewport) */
     transform: translateX(-50%);  /* move backwards 50% of this element's width */
