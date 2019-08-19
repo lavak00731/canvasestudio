@@ -17,11 +17,13 @@ export class ServiciosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.services = this._services.getService();   
+    this.services = this._services.getService();      
+  } 
+  changeViewFunc(closed: boolean){
+    this.isTriggered = closed;
   } 
   subjectTrigger (title: string) {   
     this.isTriggered = false;
-    this.dataSubject = title;
-    
+    this.dataSubject = title; 
   }
 }

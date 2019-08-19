@@ -13,6 +13,6 @@
       </div>      
     </div>
   </div>
-  <app-modal [isClosed]="isTriggered" [subj]="dataSubject"></app-modal>
+  <app-modal [hidden]="isTriggered" [isClosed]="isTriggered" [subj]="dataSubject" (closeModal)="changeViewFunc($event)"></app-modal>
     
 </div>

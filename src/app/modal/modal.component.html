@@ -1,10 +1,10 @@
-<div class="backdrop" [hidden]="isClosed">
+<div class="backdrop">
   <div role="dialog" id="dialog" aria-labelledby="dialog1_label" aria-modal="true">
     <div class="inner-modal">
       <h3 id="dialog1_label" class="dialog_label">
         Get in Touch with Us
       </h3>
-      <button type="close" aria-labelledby="close" class="close" (click)="closeModal()">
+      <button type="close" aria-labelledby="close" class="close" (click)="isClosedFunc(true)">
         <span aria-hidden="true">&times;</span>
         <span id="close" aria-hidden="true" class="visually-hidden">Close</span>
       </button> 
