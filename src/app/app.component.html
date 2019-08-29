@@ -1,13 +1,15 @@
-<a class="sr-only sr-only-focusable" href="#content"><span>Skip to main content</span></a>
+<a class="sr-only sr-only-focusable" href="#main-nan"><span>Skip to Navigation</span></a>
+<a class="sr-only sr-only-focusable" href="#content"><span>Skip to Main Content</span></a>
 <header>
   <div class="container">
       <div class="row align-items-center">
           <figure class="col-6 col-md-3 offset-3 offset-md-0 col-lg-3">
-            <a routerLink="/home" aria-label="To Home">
+            <a routerLink="/home" class="logo-link" aria-labelledby="home-label">
+              <span id="home-label" hidden>To Home Page</span>
               <img class="img-fluid" src="/../assets/images/logo.svg" alt="Canvas Estudio Logo">
             </a>
           </figure>
-          <nav class="col-12 col-md-9 text-center offset-lg-3 col-lg-6">
+          <nav id="main-nav" class="col-12 col-md-9 text-center offset-lg-3 col-lg-6">
               <a class="nav-item text-center" routerLinkActive="active-link" routerLink="/home">Home</a>
               <a class="nav-item text-center" routerLinkActive="active-link" routerLink="/services">Services</a>
               <a class="nav-item text-center" routerLinkActive="active-link" routerLink="/portfolio">Portfolio</a>
@@ -16,7 +18,7 @@
         </div>
   </div>
 </header>
-<main id="content">
+<main id="content" aria-live="assertive" aria-atomic="true" aria-relevant="all">
     <router-outlet></router-outlet>
 </main>
 <footer>

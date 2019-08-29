@@ -1,0 +1,31 @@
+@mixin focus-link($color) {
+  &:focus {
+    outline: 2px dashed $red;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $red;
+  }
+}
+@mixin focus-button($color, $background) {
+  &:focus {
+    color: $red;
+    background: $white;
+    border: 3px solid $red;
+  }
+
+  &:focus:not(:focus-visible) {
+    color: $white;
+    background: $red;    
+  }
+
+  &:focus-visible {
+    color: $red;
+    background: $white;
+    border: 3px solid $red;
+  }
+}

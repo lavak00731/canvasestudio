@@ -1,5 +1,14 @@
 @import "./../../src/_rfs";
 @import "./../../src/_variables";
+@import "./_mixins";
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  margin: .5rem auto .5rem;
+  display: block;
+  font-weight: 700;
+  border: 2px solid $blue;
+  
+}
 header {
   background: $white;
   padding: 0.8rem 0;
@@ -41,11 +50,15 @@ header {
             transform-origin: center;
   }
  }
+ .logo-link {
+   @include focus-link($red);
+ }
 .nav-item {
   display: inline-block;
   margin-right: 0.7rem;
   padding: 2rem 0.3rem;
   @include responsive-font-size(1.8rem);
+  @include focus-link($red);
   &:last-child {
     margin-right: 0;
   }
@@ -54,9 +67,7 @@ header {
     text-decoration: underline;
 
   }
-  &:focus {
-    outline: 2px dashed $red;
-  }
+ 
   @media screen and (min-width: 768px){
     & {
       margin-right: 1rem;
