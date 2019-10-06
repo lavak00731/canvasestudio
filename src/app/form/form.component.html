@@ -3,7 +3,7 @@
     <legend>Send us your comments</legend>
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" [(ngModel)]="dataModel.name" required  #name="ngModel" [attr.aria-invalid]="name.invalid && (name.dirty || name.touched)" [attr.aria-describedby]="name.invalid && (name.dirty || name.touched) ? 'name-error' : null" aria-required>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" [(ngModel)]="dataModel.name" required  #name="ngModel" [attr.aria-invalid]="name.invalid && (name.dirty || name.touched)" [attr.aria-describedby]="name.invalid && (name.dirty || name.touched) ? 'name-error' : null" aria-required> 
       <p id="name-error" class="error-descriptor" *ngIf="name.invalid && (name.dirty || name.touched)">Name is a required field</p>
     </div>
     <div class="form-group">

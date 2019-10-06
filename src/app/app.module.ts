@@ -13,6 +13,10 @@ import { Comp404Component } from './comp404/comp404.component';
 import { FormComponent } from './form/form.component';
 import { FilterClientPipe } from './filter-client.pipe';
 import { ModalComponent } from './modal/modal.component';
+import { A11yModule } from '@angular/cdk/a11y';
+
+
+
 
 @NgModule({
   declarations: [
@@ -26,11 +30,13 @@ import { ModalComponent } from './modal/modal.component';
     FormComponent,
     FilterClientPipe,
     ModalComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    A11yModule      
   ],
   providers: [],
   bootstrap: [AppComponent]

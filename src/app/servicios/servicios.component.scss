@@ -1,5 +1,6 @@
 @import "../../_variables";
 @import "../../_rfs";
+@import "../mixins";
 
 .services {
     padding: 5% 0;
@@ -36,10 +37,7 @@
         @include responsive-font-size(1.5rem);
         cursor: pointer;
         width: 100%;  
-        &:focus {
-            outline: 3px dashed $black;
-            outline-offset: 2px;
-        }          
+        @include focus-button($white, $red);         
         @media screen and (min-width: 768px) {
             @include responsive-font-size(1.8rem);
             padding: 1.8rem 1rem;
