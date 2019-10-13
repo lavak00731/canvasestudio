@@ -16,13 +16,16 @@ export class FormComponent implements OnInit {
  @Input() subjectData: string;
   
   dataModel = new FormDataType(this.name, this.email, this.msg, this.subject);
+  submited = false;
   constructor() { }
   
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
   ngOnChanges() {
     this.dataModel.subject = this.subjectData;   
   }
   
+  onSubmit() {
+    console.log(this.dataModel);
+    
+  }
 }
