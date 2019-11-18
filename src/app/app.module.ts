@@ -14,6 +14,7 @@ import { FormComponent } from './form/form.component';
 import { FilterClientPipe } from './filter-client.pipe';
 import { ModalComponent } from './modal/modal.component';
 import { A11yModule } from '@angular/cdk/a11y';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -36,7 +37,8 @@ import { A11yModule } from '@angular/cdk/a11y';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    A11yModule      
+    A11yModule,
+    HttpClientModule      
   ],
   providers: [],
   bootstrap: [AppComponent]

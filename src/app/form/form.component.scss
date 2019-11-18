@@ -51,5 +51,9 @@ form {
   .error-descriptor {
     color: $red;
   }
-  
+  .feedback-icon {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
 }

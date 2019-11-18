@@ -1,5 +1,5 @@
-<form #contactForm="ngForm" action="" (ngSubmit)="onSubmit()">
-  <fieldset>
+<form #contactForm="ngForm" action="" (ngSubmit)="onSubmit(contactForm)">
+  <fieldset *ngIf="!isSubmitted">
     <legend>Send us your comments</legend>
     <div class="form-group">
       <label for="name">Name</label>
@@ -24,4 +24,18 @@
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
   </fieldset>
+  <div class="form-submitted" *ngIf="response">
+    <svg class="feedback-icon" aria-describedby="successTitle" class="suc">
+          <path class="checkmark__check" fill="none" d="M10.7,20.4l5.3,5.3l12.4-12.5"></path>
+          </svg>
+    <h2 id="successTitle">Form has been submitted with success</h2>
+    <p>Thanks for getting in touch with us, we are going to reply back asap.</p>
+    <button type="button" class="btn btn-primary" (click)="resetForm(contactForm)">Accept</button>
+  </div>
+  <div class="form-submitted" *ngIf="errorMessage"> 
+    <svg  class="feedback-icon" aria-describedby="errorTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g fill="#FF0000"><path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"/></g></svg>
+    <h2 id="errorTitle">Something went wrong try again in few minutes</h2>
+    <p>Please try again or contact us via Whatsapp</p>
+    <button type="button" class="btn btn-primary" (click)="tryAgain()">Retry</button>
+  </div>
 </form>
