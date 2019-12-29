@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, OnChanges} from '@angular/core';
 import { FormDataType } from './../form-data-type';
 import { HttpClient } from '@angular/common/http';
+import { Form } from '@angular/forms';
 
 
 @Component({
@@ -19,9 +20,7 @@ export class FormComponent implements OnInit {
   formTarget = "../../php-mailer/mailer.php";
   errorMessage;
   response;
-  @ViewChild('contactForm', {
-    static: false
-}) contactForm: NgForm;
+    
  @Input() subjectData: string;
   
   dataModel = new FormDataType(this.name, this.email, this.msg, this.subject);
@@ -34,8 +33,8 @@ export class FormComponent implements OnInit {
   ngOnChanges() {
     this.dataModel.subject = this.subjectData;   
   }
-  resetForm() {
-    this.contactForm.reset();
+  resetForm(contactForm) {
+    contactForm.reset();
   }
   tryAgain() {
     this.isSubmitted = false;
@@ -43,7 +42,7 @@ export class FormComponent implements OnInit {
   }
   onSubmit() {
     this.isSubmitted = true;
-    this.http.post(this.formTarget, this.dataModel).subscribe(
+     this.http.post(this.formTarget, this.dataModel).subscribe(
       (response) => {
           this.response = response;
           },
