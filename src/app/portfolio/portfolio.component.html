@@ -40,7 +40,6 @@
           </div>         
         </fieldset>
       </form>
-      <p>{{featurelist}}</p>
       <div class="card-columns">
         <div class="card" *ngFor="let client of clients | filterClient: services">
           <a [routerLink]="['/portfolio', client.id]">

@@ -1,39 +1,64 @@
-<form #contactForm="ngForm" action="" (ngSubmit)="onSubmit(contactForm)">
+<form #contactForm="ngForm" action="" (ngSubmit)="onSubmit()" aria-live="assertive">
   <fieldset *ngIf="!isSubmitted">
     <legend>Send us your comments</legend>
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" [(ngModel)]="dataModel.name" required  #name="ngModel" [attr.aria-invalid]="name.invalid && (name.dirty || name.touched)" [attr.aria-describedby]="name.invalid && (name.dirty || name.touched) ? 'name-error' : null" aria-required> 
-      <p id="name-error" class="error-descriptor" *ngIf="name.invalid && (name.dirty || name.touched)">Name is a required field</p>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name"
+        [(ngModel)]="dataModel.name" required #name="ngModel"
+        [attr.aria-invalid]="name.invalid && (name.dirty || name.touched)"
+        [attr.aria-describedby]="name.invalid && (name.dirty || name.touched) ? 'name-error' : null" aria-required>
+      <p id="name-error" class="error-descriptor" *ngIf="name.invalid && (name.dirty || name.touched)">Name is a
+        required field</p>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" class="form-control" placeholder="youremail@email.com" [(ngModel)]="dataModel.email" #email="ngModel" [attr.aria-invalid]="email.errors?.email || email.errors?.required && (email.dirty || email.touched)" email required [attr.aria-describedby]="[email.errors?.email && (email.dirty || email.touched) ? 'email-valid' : null, email.errors?.required && (email.dirty || email.touched) ? 'email-required' : null]" aria-required>
+      <input type="email" name="email" id="email" class="form-control" placeholder="youremail@email.com"
+        [(ngModel)]="dataModel.email" #email="ngModel"
+        [attr.aria-invalid]="email.errors?.email || email.errors?.required && (email.dirty || email.touched)" email
+        required
+        [attr.aria-describedby]="[email.errors?.email && (email.dirty || email.touched) ? 'email-valid' : null, email.errors?.required && (email.dirty || email.touched) ? 'email-required' : null]"
+        aria-required>
 
-    <p id="email-required" class="error-descriptor" *ngIf="email.errors?.required && (email.dirty || email.touched)">Email is a required field</p>
-    <p id="email-valid" class="error-descriptor" *ngIf="email.errors?.email && (email.dirty || email.touched)">This Field needs to be a Valid Email</p>
+      <p id="email-required" class="error-descriptor" *ngIf="email.errors?.required && (email.dirty || email.touched)">
+        Email is a required field</p>
+      <p id="email-valid" class="error-descriptor" *ngIf="email.errors?.email && (email.dirty || email.touched)">This
+        Field needs to be a Valid Email</p>
     </div>
     <div class="form-group">
       <label for="subject">Subject (Optional)</label>
-      <input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject"  [(ngModel)]="dataModel.subject">
+      <input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject"
+        [(ngModel)]="dataModel.subject">
     </div>
     <div class="form-group">
       <label for="msg">Message</label>
-      <textarea class="form-control" name="msg" id="msg" rows="3" required  [(ngModel)]="dataModel.msg" #msg="ngModel" required [attr.aria-invalid]="msg.invalid && (msg.dirty || msg.touched)" [attr.aria-invalid]="msg.invalid && (msg.dirty || msg.touched) ? 'msg-error' : null"></textarea>
-      <p id="msg-error" class="error-descriptor" *ngIf="msg.invalid && (msg.dirty || msg.touched)">Message field cannot be empty</p>
+      <textarea class="form-control" name="msg" id="msg" rows="3" required [(ngModel)]="dataModel.msg" #msg="ngModel"
+        required [attr.aria-invalid]="msg.invalid && (msg.dirty || msg.touched)"
+        [attr.aria-invalid]="msg.invalid && (msg.dirty || msg.touched) ? 'msg-error' : null"></textarea>
+      <p id="msg-error" class="error-descriptor" *ngIf="msg.invalid && (msg.dirty || msg.touched)">Message field cannot
+        be empty</p>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
   </fieldset>
+  <div class="feedback-icon" *ngIf="loading">
+    <div class="icon-spin3 animate-spin"></div>
+    <h2 class="visually-hidden">Sending the form</h2>
+  </div>
   <div class="form-submitted" *ngIf="response">
-    <svg class="feedback-icon" aria-describedby="successTitle" class="suc">
-          <path class="checkmark__check" fill="none" d="M10.7,20.4l5.3,5.3l12.4-12.5"></path>
-          </svg>
+    <img class="feedback-icon"
+      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYxMiA3OTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MTIgNzkyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM0MUFENDk7fQo8L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01NjIsMzk2YzAtMTQxLjQtMTE0LjYtMjU2LTI1Ni0yNTZTNTAsMjU0LjYsNTAsMzk2czExNC42LDI1NiwyNTYsMjU2UzU2Miw1MzcuNCw1NjIsMzk2TDU2MiwzOTZ6ICAgIE01MDEuNywyOTYuM2wtMjQxLDI0MWwwLDBsLTE3LjIsMTcuMkwxMTAuMyw0MjEuM2w1OC44LTU4LjhsNzQuNSw3NC41bDE5OS40LTE5OS40TDUwMS43LDI5Ni4zTDUwMS43LDI5Ni4zeiIvPjwvZz48L3N2Zz4="
+      alt="Success Icon">
     <h2 id="successTitle">Form has been submitted with success</h2>
     <p>Thanks for getting in touch with us, we are going to reply back asap.</p>
     <button type="button" class="btn btn-primary" (click)="resetForm(contactForm)">Accept</button>
   </div>
-  <div class="form-submitted" *ngIf="errorMessage"> 
-    <svg  class="feedback-icon" aria-describedby="errorTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect x="0" fill="none" width="20" height="20"/><g fill="#FF0000"><path d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z"/></g></svg>
+  <div class="form-submitted" *ngIf="errorMessage">
+    <svg class="feedback-icon" aria-describedby="errorTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <rect x="0" fill="none" width="20" height="20" />
+      <g fill="#FF0000">
+        <path
+          d="M12.12 10l3.53 3.53-2.12 2.12L10 12.12l-3.54 3.54-2.12-2.12L7.88 10 4.34 6.46l2.12-2.12L10 7.88l3.54-3.53 2.12 2.12z" />
+      </g>
+    </svg>
     <h2 id="errorTitle">Something went wrong try again in few minutes</h2>
     <p>Please try again or contact us via Whatsapp</p>
     <button type="button" class="btn btn-primary" (click)="tryAgain()">Retry</button>

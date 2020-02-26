@@ -56,4 +56,12 @@ form {
     display: block;
     margin: 0 auto;
   }
+  .icon-spin3 {
+    font-size: 11rem;
+    text-align: center; 
+    color: $red;
+    &:before {
+      text-shadow: 3px 3px 3px $black;
+    }  
+  }
 }

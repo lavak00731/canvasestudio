@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild, OnChanges} from '@angular/core';
 import { FormDataType } from './../form-data-type';
-import { HttpClient } from '@angular/common/http';
-import { Form } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -17,13 +16,14 @@ export class FormComponent implements OnInit {
   msg;
   subject;
   isSubmitted = false;
-  formTarget = "../../php-mailer/mailer.php";
+  formTarget = "./contacto.php";
   errorMessage;
   response;
+  loading = false;
     
  @Input() subjectData: string;
   
-  dataModel = new FormDataType(this.name, this.email, this.msg, this.subject);
+  dataModel = new FormDataType(this.name, this.email, this.msg, this.subject); 
   submited = false;
   constructor(private http: HttpClient) { }
   
@@ -34,21 +34,30 @@ export class FormComponent implements OnInit {
     this.dataModel.subject = this.subjectData;   
   }
   resetForm(contactForm) {
-    contactForm.reset();
+    this.isSubmitted = false;
+    this.response = false;
+    setTimeout(function(){
+      contactForm.reset();   
+    }, 1000)
+     
   }
   tryAgain() {
     this.isSubmitted = false;
     this.errorMessage = false;
   }
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded', }), responseType: 'text' as 'json' };
   onSubmit() {
     this.isSubmitted = true;
-     this.http.post(this.formTarget, this.dataModel).subscribe(
+    this.loading = true;
+    this.http.post(this.formTarget, 'name='+this.dataModel.name+'&email='+this.dataModel.email+'&msg='+this.dataModel.msg+'&subject='+this.dataModel.subject, this.httpOptions).subscribe(
       (response) => {
+          this.loading = false;
           this.response = response;
           },
       (error) => {
+              this.loading = false;
               this.errorMessage = error.message; 
-             
+             console.log(this.errorMessage)
           });
   }
 
